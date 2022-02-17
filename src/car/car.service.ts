@@ -9,19 +9,19 @@ export class CarService {
   }
 
   public postCar(car) {
-    return this.cars;
+    return;
   }
 
   public getCarById(id) {
-    return this.cars;
+    return;
   }
 
   public deleteCarById(id) {
-    return this.cars;
+    return;
   }
 
   public putCarById(id) {
     /** "put" in this case means "update" */
-    return this.cars;
+    return;
   }
 }
