@@ -9,7 +9,7 @@ export class CarService {
   }
 
   public postCar(car) {
-    return;
+    return this.cars.push(car);
   }
 
   public getCarById(id) {
