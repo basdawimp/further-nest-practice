@@ -10,19 +10,19 @@ export class CarController {
     return this.carService.getCars();
   }
 
-  @Post
+  @Post()
   public postCar() {
   }
 
-  @Get
+  @Get()
   public getCatById() {
   }
 
-  @Delete
+  @Delete()
   public deleteCarById() {
   }
 
-  @Put
+  @Put()
   public putCarById() {
   }
 }
