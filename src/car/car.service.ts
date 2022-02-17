@@ -25,6 +25,9 @@ export class CarService {
 
   public putCarById(id) {
     /** "put" in this case means "update" */
-    return;
+    const [car, carIndex] = this.findCar(id);
+    car[propertyName] = propertyValue;
+    this.cars[carIndex] = car;
+    return this.cars;
   }
 }
