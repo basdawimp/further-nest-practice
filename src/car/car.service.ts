@@ -13,7 +13,8 @@ export class CarService {
   }
 
   public getCarById(id) {
-    return;
+    const car = this.findCar(id)[0];
+    return car;
   }
 
   public deleteCarById(id) {
