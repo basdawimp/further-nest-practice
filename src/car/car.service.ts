@@ -18,7 +18,9 @@ export class CarService {
   }
 
   public deleteCarById(id) {
-    return;
+    const carIndex = this.findCar(id)[1];
+    this.cars.splice(carIndex, 1);
+    return this.cars;
   }
 
   public putCarById(id) {
