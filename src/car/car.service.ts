@@ -4,23 +4,24 @@ import { CARS } from './cars.mock';
 @Injectable()
 export class CarService {
   private cars = CARS;
-  public async getCars() {
+  public getCars() {
     return this.cars;
   }
 
-  public async postCar(car) {
+  public postCar(car) {
     return this.cars;
   }
 
-  public async getCarById(id) {
+  public getCarById(id) {
     return this.cars;
   }
 
-  public async deleteCarById(id) {
+  public deleteCarById(id) {
     return this.cars;
   }
 
-  public async putCarById(id) {
+  public putCarById(id) {
+    /** "put" in this case means "update" */
     return this.cars;
   }
 }
