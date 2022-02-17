@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { CARS } from './cars.mock';
 
 @Injectable()
@@ -29,5 +29,14 @@ export class CarService {
     car[propertyName] = propertyValue;
     this.cars[carIndex] = car;
     return this.cars;
+  }
+
+  private findCar(id: number): [any, number] {
+    const carIndex = this.cars.findIndex((car) => car.id === id);
+    const car = this.cars[carIndex];
+    if (!car) {
+      throw new HttpException('No car found', 404);
+    }
+    return [car, carIndex];
   }
 }
