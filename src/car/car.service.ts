@@ -12,18 +12,18 @@ export class CarService {
     return this.cars.push(car);
   }
 
-  public getCarById(id) {
+  public getCarById(id: number) {
     const car = this.findCar(id)[0];
     return car;
   }
 
-  public deleteCarById(id) {
+  public deleteCarById(id: number) {
     const carIndex = this.findCar(id)[1];
     this.cars.splice(carIndex, 1);
     return this.cars;
   }
 
-  public putCarById(id) {
+  public putCarById(id: number, propertyName: string, propertyValue: string) {
     /** "put" in this case means "update" */
     const [car, carIndex] = this.findCar(id);
     car[propertyName] = propertyValue;
