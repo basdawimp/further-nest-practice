@@ -5,4 +5,4 @@ export const CARS = [
     colour: 'gold',
     model: 'BMW X5',
   },
-]
+];
