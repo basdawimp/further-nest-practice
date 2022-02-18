@@ -12,23 +12,36 @@ export class CarService {
     return this.cars.push(car);
   }
 
-  public getCarById(id: number) {
-    const car = this.findCar(id)[0];
-    return car;
+  public getCarById(id: number): Promise<any> {
+    const carId = Number(id);
+    return new Promise((resolve) => {
+      const car = this.findCar(carId)[0];
+      return resolve(car);
+    });
   }
 
-  public deleteCarById(id: number) {
-    const carIndex = this.findCar(id)[1];
-    this.cars.splice(carIndex, 1);
-    return this.cars;
+  public deleteCarById(id: number): Promise<any> {
+    const carId = Number(id);
+    return new Promise((resolve) => {
+      const carIndex = this.findCar(carId)[1];
+      this.cars.splice(carIndex, 1);
+      return resolve(this.cars);
+    });
   }
 
-  public putCarById(id: number, propertyName: string, propertyValue: string) {
+  public putCarById(
+    id: number,
+    propertyName: string,
+    propertyValue: string,
+  ): Promise<any> {
     /** "put" in this case means "update" */
-    const [car, carIndex] = this.findCar(id);
-    car[propertyName] = propertyValue;
-    this.cars[carIndex] = car;
-    return this.cars;
+    const carId = Number(id);
+    return new Promise((resolve) => {
+      const [car, carIndex] = this.findCar(carId);
+      car[propertyName] = propertyValue;
+      this.cars[carIndex] = car;
+      return resolve(this.cars);
+    });
   }
 
   private findCar(id: number): [any, number] {
