@@ -40,7 +40,7 @@ export class CarService {
       const [car, carIndex] = this.findCar(carId);
       car[propertyName] = propertyValue;
       this.cars[carIndex] = car;
-      return resolve(this.cars);
+      return resolve(this.cars[carIndex]);
     });
   }
 
